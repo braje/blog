@@ -1,0 +1,21 @@
+@(message: String)
+
+@main("Hi, Tim, Welcome to Play 2.0") {
+
+@for(post <- BlogPost.findAll()) {
+    <article>
+        <header>
+            <h1>
+                <a href="#" rel="bookmark" title="link to this post">@post.title</a>
+            </h1>
+            <p class="postDate">@post.postDate</p>
+        </header>
+        <p>
+            @post.post
+        </p>
+    </article>
+}
+
+@****    @play20.welcome(message) ***@
+
+}
