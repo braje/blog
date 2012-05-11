@@ -11,7 +11,7 @@
             <p class="postDate">@org.joda.time.format.DateTimeFormat.forPattern("EEEE, dd MMMM yyyy").print(post.postDate)</p>
         </header>
         <p>
-            @post.post
+            @Html(post.post)
         </p>
     </article>
 }

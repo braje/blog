@@ -1,0 +1,13 @@
+article p {
+    font-size: 115%;
+}
+
+article p.postDate {
+    color: #555;
+    font-size: 85%;
+}
+
+article {
+    margin-bottom: 5em;
+//    border-bottom: 1px solid #999;
+}
