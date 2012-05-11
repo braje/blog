@@ -8,7 +8,7 @@
             <h1>
                 <a href="#" rel="bookmark" title="link to this post">@post.title</a>
             </h1>
-            <p class="postDate">@post.postDate</p>
+            <p class="postDate">@org.joda.time.format.DateTimeFormat.forPattern("EEEE, dd MMMM yyyy").print(post.postDate)</p>
         </header>
         <p>
             @post.post
