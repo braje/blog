@@ -11,3 +11,14 @@ article {
     margin-bottom: 5em;
     /*border-bottom: 1px solid #999;*/
 }
+
+div.header {
+
+}
+
+div.header h1 {
+    font-variant: small-caps;
+}
+
+div.header a {
+}
