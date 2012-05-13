@@ -9,4 +9,7 @@ object Application extends Controller {
     Ok(views.html.index("Tim, your new application is ready."))
   }
 
+  def blogpost(id: Int) = Action {
+    Ok(views.html.blogpost(id))
+  }
 }

@@ -1,8 +1,8 @@
-@(message: String)
+@(id: Int)
 
 @main("Hi, Tim, Welcome to Play 2.0") {
 
-@for(post <- BlogPost.findAll()) {
+@for(post <- BlogPost.findById(id)) {
     <article>
         <header>
             <h1>
@@ -15,7 +15,4 @@
         </p>
     </article>
 }
-
-@****    @play20.welcome(message) ***@
-
 }

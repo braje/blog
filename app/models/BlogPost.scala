@@ -20,19 +20,25 @@ object BlogPost {
 //  );
 
   val blogPostParser = {
-    //    get[Pk[Long]]("computer.id") ~
+    get[Pk[Int]]("id") ~
     get[String]("title") ~
     get[Date]("post_date") ~
     get[String]("post_content") map {
-      case title~postDate~content => BlogPost(new DateTime(postDate.getTime), title, content)
+      case id~title~postDate~content => BlogPost(id,new DateTime(postDate.getTime), title, content)
     }
   }
 
-  def findAll2(): Seq[BlogPost] = {
+  def findById(id: Int): Option[BlogPost] = {
+    DB.withConnection { implicit c =>
+      SQL("select * from blog_post where id = {id}").on("id" -> id).as( blogPostParser.singleOpt )
+    }
+  }
+
+  def findAll(): Seq[BlogPost] = {
     DB.withConnection { implicit c =>
       SQL("select * from blog_post order by post_date desc").as( blogPostParser * )
     }
   }
 }
 
-case class BlogPost(postDate: DateTime, title: String, post: String);
+case class BlogPost(id: Pk[Int] = NotAssigned, postDate: DateTime, title: String, post: String)
