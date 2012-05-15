@@ -1,0 +1,13 @@
+@(post: BlogPost)
+
+<article>
+    <header>
+        <h1>
+            <a href="/blogs/@post.id" rel="bookmark" title="link to this post">@post.title</a>
+        </h1>
+        <p class="postDate">@org.joda.time.format.DateTimeFormat.forPattern("EEEE, dd MMMM yyyy").print(post.postDate)</p>
+    </header>
+    <p>
+        @Html(post.post)
+    </p>
+</article>
