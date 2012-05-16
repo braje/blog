@@ -16,9 +16,26 @@ div.header {
 
 }
 
-div.header h1 {
+div.page-header h1 {
     font-variant: small-caps;
 }
 
 div.header a {
+}
+
+div.about h1 {
+    font-variant: small-caps;
+    font-size: 125%;
+    font-weight: bold;
+}
+
+.about ul {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 1em;
+    text-indent: -1em;
+}
+
+.about ul li:before {
+    content: "\2192 \0020";
 }
